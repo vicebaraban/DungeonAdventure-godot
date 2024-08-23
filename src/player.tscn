@@ -1,0 +1,35 @@
+[gd_scene load_steps=9 format=3 uid="uid://bvxpmy72hitnm"]
+
+[ext_resource type="Script" path="res://src/player.gd" id="1_d8hdw"]
+[ext_resource type="Texture2D" uid="uid://kp84nklehqd5" path="res://resources/textures/character.png" id="1_rkg8g"]
+[ext_resource type="Texture2D" uid="uid://b7t7v3s5nckh8" path="res://resources/textures/bow.png" id="3_vqxts"]
+[ext_resource type="Script" path="res://src/player_sprite.gd" id="3_xjd2i"]
+[ext_resource type="Texture2D" uid="uid://bve4ej80v4aqg" path="res://resources/textures/sword.png" id="4_xfp28"]
+[ext_resource type="Script" path="res://src/bow_sprite.gd" id="5_1h7up"]
+[ext_resource type="Script" path="res://src/sword_sprite.gd" id="7_jqavu"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ntq70"]
+
+[node name="player" type="CharacterBody2D"]
+script = ExtResource("1_d8hdw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(1.4, 1.4)
+shape = SubResource("CapsuleShape2D_ntq70")
+
+[node name="bow" type="Node2D" parent="."]
+
+[node name="bow_sprite" type="Sprite2D" parent="bow"]
+texture = ExtResource("3_vqxts")
+script = ExtResource("5_1h7up")
+
+[node name="player_sprite" type="Sprite2D" parent="."]
+texture = ExtResource("1_rkg8g")
+script = ExtResource("3_xjd2i")
+
+[node name="sword" type="Node2D" parent="."]
+
+[node name="sword_sprite" type="Sprite2D" parent="sword"]
+position = Vector2(6, -4)
+texture = ExtResource("4_xfp28")
+script = ExtResource("7_jqavu")

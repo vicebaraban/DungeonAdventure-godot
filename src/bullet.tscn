@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://cu4h0g4q1ysel"]
+
+[ext_resource type="Texture2D" uid="uid://ckxq1t8nydxah" path="res://resources/textures/arrow.png" id="1_ailrq"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_sivym"]
+
+[node name="bullet" type="CharacterBody2D"]
+
+[node name="bullet_shape" type="CollisionShape2D" parent="."]
+scale = Vector2(0.45, 0.9)
+shape = SubResource("CapsuleShape2D_sivym")
+
+[node name="bullet_sprite" type="Sprite2D" parent="."]
+texture = ExtResource("1_ailrq")

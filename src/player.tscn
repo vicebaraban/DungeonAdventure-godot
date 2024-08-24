@@ -1,17 +1,24 @@
-[gd_scene load_steps=10 format=3 uid="uid://bvxpmy72hitnm"]
+[gd_scene load_steps=15 format=3 uid="uid://bvxpmy72hitnm"]
 
 [ext_resource type="Script" path="res://src/player.gd" id="1_d8hdw"]
 [ext_resource type="Texture2D" uid="uid://b8vwahpotpuxh" path="res://resources/textures/character.png" id="1_rkg8g"]
 [ext_resource type="Texture2D" uid="uid://c1ca0wb17arck" path="res://resources/textures/bow.png" id="3_vqxts"]
 [ext_resource type="Script" path="res://src/player_sprite.gd" id="3_xjd2i"]
+[ext_resource type="Script" path="res://src/sword.gd" id="4_l6tex"]
+[ext_resource type="Script" path="res://src/inventory.gd" id="4_s2wcb"]
 [ext_resource type="Script" path="res://src/bow.gd" id="4_tanfu"]
 [ext_resource type="Texture2D" uid="uid://j75yufk1ii4l" path="res://resources/textures/sword.png" id="4_xfp28"]
 [ext_resource type="Script" path="res://src/bow_sprite.gd" id="5_1h7up"]
+[ext_resource type="Script" path="res://src/hand.gd" id="5_uspaf"]
 [ext_resource type="Script" path="res://src/sword_sprite.gd" id="7_jqavu"]
+[ext_resource type="Script" path="res://src/sword_area.gd" id="9_igltq"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ntq70"]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_kao3e"]
+
 [node name="player" type="CharacterBody2D"]
+slide_on_ceiling = false
 script = ExtResource("1_d8hdw")
 
 [node name="player_shape" type="CollisionShape2D" parent="."]
@@ -22,16 +29,32 @@ shape = SubResource("CapsuleShape2D_ntq70")
 texture = ExtResource("1_rkg8g")
 script = ExtResource("3_xjd2i")
 
-[node name="bow" type="Node2D" parent="."]
-script = ExtResource("4_tanfu")
+[node name="inventory" type="Node" parent="."]
+script = ExtResource("4_s2wcb")
 
-[node name="bow_sprite" type="Sprite2D" parent="bow"]
-texture = ExtResource("3_vqxts")
-script = ExtResource("5_1h7up")
+[node name="hand" type="Node2D" parent="inventory"]
+script = ExtResource("5_uspaf")
 
-[node name="sword" type="Node2D" parent="."]
+[node name="sword" type="Node2D" parent="inventory"]
+script = ExtResource("4_l6tex")
 
-[node name="sword_sprite" type="Sprite2D" parent="sword"]
+[node name="sword_sprite" type="Sprite2D" parent="inventory/sword"]
 position = Vector2(6, -4)
 texture = ExtResource("4_xfp28")
 script = ExtResource("7_jqavu")
+
+[node name="sword_area" type="Area2D" parent="inventory/sword"]
+collision_layer = 3
+collision_mask = 3
+script = ExtResource("9_igltq")
+
+[node name="sword_shape" type="CollisionShape2D" parent="inventory/sword/sword_area"]
+scale = Vector2(2.7, 2.7)
+shape = SubResource("CircleShape2D_kao3e")
+
+[node name="bow" type="Node2D" parent="inventory"]
+script = ExtResource("4_tanfu")
+
+[node name="bow_sprite" type="Sprite2D" parent="inventory/bow"]
+texture = ExtResource("3_vqxts")
+script = ExtResource("5_1h7up")

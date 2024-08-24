@@ -14,4 +14,14 @@ func settings(pos, target):
 
 func _physics_process(_delta):
 	velocity = dir * speed
-	move_and_slide()
+	var colission = move_and_slide()
+	if colission:
+		for i in get_slide_collision_count():
+			var contact = get_slide_collision(i)
+			if contact.get_collider().name == "enemy":
+				contact.get_collider().hit(1)
+				queue_free()
+				break
+	# if colission:
+	# 	for contact in colission:
+	# 		print(contact.name)

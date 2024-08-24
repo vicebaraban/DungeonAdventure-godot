@@ -1,10 +1,15 @@
-[gd_scene load_steps=3 format=3 uid="uid://cu4h0g4q1ysel"]
+[gd_scene load_steps=5 format=3 uid="uid://cu4h0g4q1ysel"]
 
-[ext_resource type="Texture2D" uid="uid://ckxq1t8nydxah" path="res://resources/textures/arrow.png" id="1_ailrq"]
+[ext_resource type="Texture2D" uid="uid://c44ki60dcj5f6" path="res://resources/textures/arrow.png" id="1_ailrq"]
+[ext_resource type="Script" path="res://src/bullet.gd" id="1_uh6fj"]
+[ext_resource type="Script" path="res://src/bullet_sprite.gd" id="3_wy2ux"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_sivym"]
 
 [node name="bullet" type="CharacterBody2D"]
+collision_layer = 2
+collision_mask = 0
+script = ExtResource("1_uh6fj")
 
 [node name="bullet_shape" type="CollisionShape2D" parent="."]
 scale = Vector2(0.45, 0.9)
@@ -12,3 +17,4 @@ shape = SubResource("CapsuleShape2D_sivym")
 
 [node name="bullet_sprite" type="Sprite2D" parent="."]
 texture = ExtResource("1_ailrq")
+script = ExtResource("3_wy2ux")

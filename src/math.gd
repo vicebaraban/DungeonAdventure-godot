@@ -36,3 +36,15 @@ func calculate_angle(x1, y1, x2, y2):
     else:
         angle = 90 - rad_to_deg(atan(len_y / len_x))
     return angle
+
+
+func calculate_direction(x1, y1, x2, y2):
+    var x = x2 - x1
+    var y = y2 - y1
+    var z = sqrt(x ** 2 + y ** 2)
+    var dx = x / z
+    var dy = y / z
+    return Vector2(dx, dy)
+
+# func calculate_direction_angle(x, y, angle):
+#     pass

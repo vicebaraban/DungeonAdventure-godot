@@ -46,5 +46,8 @@ func calculate_direction(x1, y1, x2, y2):
     var dy = y / z
     return Vector2(dx, dy)
 
+func hypotenuse(x1, y1, x2, y2):
+    return sqrt((x1 - x2) ** 2 + (y1 - y2) ** 2)
+
 # func calculate_direction_angle(x, y, angle):
 #     pass

@@ -5,7 +5,7 @@ var Bullet = preload("res://src/bullet.tscn")
 
 var active = false
 
-var cooldown = 1.0
+const cooldown = 1.0
 var cooldown_delta = 0.0
 
 
@@ -22,4 +22,5 @@ func _physics_process(delta):
 			var b = Bullet.instantiate()
 			b.settings(get_node("../..").position, get_global_mouse_position())
 			get_tree().get_root().add_child(b)
+			get_node("bow_audio").play()
 

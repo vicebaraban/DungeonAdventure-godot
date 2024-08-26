@@ -6,4 +6,4 @@ func _physics_process(_delat):
 
 	for body in get_overlapping_bodies():
 		if body.name.left(5) == "enemy" and get_parent().attack:
-			body.hit(3)
+			body.hit(get_parent().damage)

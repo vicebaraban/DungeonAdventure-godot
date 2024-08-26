@@ -6,7 +6,7 @@ var Enemy = preload("res://src/enemy.tscn")
 var Wall = preload("res://src/wall.tscn")
 var Camera = preload("res://src/camera.gd")
 var Finish = preload("res://src/finish.tscn")
-var Key = preload("res://src/key.tscn")
+var Key = preload("res://src/key_item.tscn")
 var PowerItem = preload("res://src/power_item.tscn")
 
 var floor_texture = preload("res://resources/textures/floor.png")
@@ -95,7 +95,7 @@ func generate_level():
 				var e1 = Key.instantiate()
 				e1.global_position = t
 				add_child(e1)
-				e1.name = "key"
+				e1.name = "key_item"
 			elif p == "!":
 				var e = Sprite2D.new()
 				e.texture = floor_texture

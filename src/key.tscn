@@ -1,16 +1,27 @@
-[gd_scene load_steps=4 format=3 uid="uid://kryjodm1j82x"]
+[gd_scene load_steps=5 format=3 uid="uid://11d8novasp4r"]
 
 [ext_resource type="Texture2D" uid="uid://cr18uo8jay4m5" path="res://resources/textures/key.png" id="1_5g826"]
 [ext_resource type="Script" path="res://src/key.gd" id="1_461xi"]
+[ext_resource type="Script" path="res://src/key_sprite.gd" id="3_i4xpf"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_a6smf"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_81uxp"]
 size = Vector2(38, 20)
 
-[node name="key" type="Area2D"]
+[node name="key" type="Node2D"]
 script = ExtResource("1_461xi")
 
-[node name="key_sprite" type="Sprite2D" parent="."]
-texture = ExtResource("1_5g826")
+[node name="key_area" type="Area2D" parent="."]
 
-[node name="key_shape" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_a6smf")
+[node name="key_area_shape" type="CollisionShape2D" parent="key_area"]
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_81uxp")
+
+[node name="key_sprite" type="Sprite2D" parent="."]
+z_index = 5
+position = Vector2(0, 1)
+texture = ExtResource("1_5g826")
+script = ExtResource("3_i4xpf")
+
+[node name="icon" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("1_5g826")

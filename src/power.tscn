@@ -1,0 +1,19 @@
+[gd_scene load_steps=5 format=3 uid="uid://bukytthdu6yi6"]
+
+[ext_resource type="Texture2D" uid="uid://ca7gsuth3fmba" path="res://resources/textures/magic_hit_ef.png" id="1_4pqng"]
+[ext_resource type="Script" path="res://src/power.gd" id="1_vq0fa"]
+[ext_resource type="Script" path="res://src/power_sprite.gd" id="3_ou17l"]
+[ext_resource type="Texture2D" uid="uid://bdq177raex6i" path="res://resources/textures/magic_hit_item.png" id="4_bwi0c"]
+
+[node name="power" type="Node2D"]
+script = ExtResource("1_vq0fa")
+
+[node name="power_sprite" type="Sprite2D" parent="."]
+z_index = 6
+texture = ExtResource("1_4pqng")
+script = ExtResource("3_ou17l")
+
+[node name="icon" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(1, 1)
+texture = ExtResource("4_bwi0c")

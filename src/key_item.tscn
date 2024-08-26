@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://kryjodm1j82x"]
+
+[ext_resource type="Texture2D" uid="uid://cr18uo8jay4m5" path="res://resources/textures/key.png" id="1_ifvmc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a6smf"]
+size = Vector2(38, 20)
+
+[node name="key_item" type="Area2D"]
+
+[node name="key_item_sprite" type="Sprite2D" parent="."]
+texture = ExtResource("1_ifvmc")
+
+[node name="key_item_shape" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_a6smf")

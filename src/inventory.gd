@@ -71,3 +71,4 @@ func remove_active_item():
 	get_parent().get_node("ui/space/inventory").remove_item(active_position)
 	get_child(active_position).queue_free()
 	active_position -= 1
+	get_parent().get_node("ui/space/inventory").select(active_position)

@@ -4,6 +4,8 @@ extends Node2D
 var active = false
 var attack = false
 
+var used = false
+
 const cooldown = 1.0
 var cooldown_delta = 0.0
 
@@ -21,4 +23,7 @@ func _physics_process(delta):
 			attack = true	
 		else:
 			attack = false
+		
+	if used:
+		get_parent().remove_active_item()
 

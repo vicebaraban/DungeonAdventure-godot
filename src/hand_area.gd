@@ -21,3 +21,4 @@ func _physics_process(_delat):
 			body.queue_free()
 			var e = Power.instantiate()
 			p_inv.add_item(e)
+			get_node("../../..").get_node("ui/space/power_bar/progress_bar").value = 16

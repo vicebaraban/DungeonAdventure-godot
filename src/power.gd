@@ -4,7 +4,7 @@ extends Node2D
 var active = false
 var effect = false
 
-const cooldown = 7.0
+const cooldown = 16.0
 var cooldown_delta = 0.0
 
 
@@ -25,6 +25,7 @@ func _physics_process(delta):
 		get_parent().get_node("inventory/bow").damage = 100
 		get_parent().get_node("inventory/sword").damage = 100
 		cooldown_delta += delta
+		get_parent().get_node("ui/space/power_bar/progress_bar").value = int(cooldown - cooldown_delta)
 		if cooldown_delta >= cooldown:
 			get_parent().get_node("inventory/bow").damage = 1
 			get_parent().get_node("inventory/sword").damage = 3

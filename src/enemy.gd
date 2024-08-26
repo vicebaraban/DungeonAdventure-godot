@@ -59,10 +59,9 @@ func hit(number):
 	durability -= number
 	var rv = randi() % 4 + 1
 	get_node("EnemyHit" + str(rv)).play()
-	print(get_parent().name)
 	if durability <= 0:
 		rv = randi() % 3 + 1
-		get_parent().get_parent().get_node("enemy_die_" + str(rv) + "_audio").play()
+		get_parent().get_node("player/enemy_die_" + str(rv) + "_audio").play()
 		queue_free()
 
 func attack(contact):

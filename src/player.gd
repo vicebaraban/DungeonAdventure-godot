@@ -6,6 +6,11 @@ const speed = 80.0
 var durability = 10
 
 
+func _ready(): 
+	get_node("playing_audio").play()
+	get_node("start_playing_audio").play()
+
+
 func _physics_process(_delta): 
 	velocity.x = Input.get_action_strength("move_right") - Input.get_action_strength("move_left")
 	velocity.y = Input.get_action_strength("move_down") - Input.get_action_strength("move_up")

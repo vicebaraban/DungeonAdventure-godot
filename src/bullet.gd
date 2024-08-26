@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 
-const speed = 120.0	
+const speed = 190.0	
 var dir = Vector2(0, 0)
 var angle
 

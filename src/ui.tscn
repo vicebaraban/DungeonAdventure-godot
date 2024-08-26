@@ -64,7 +64,7 @@ z_index = 20
 layout_mode = 0
 offset_right = 200.0
 offset_bottom = 30.0
-max_value = 10.0
+max_value = 16.0
 texture_progress = ExtResource("1_nwae8")
 tint_progress = Color(4.34139e-05, 0.1258, 0.793707, 1)
 

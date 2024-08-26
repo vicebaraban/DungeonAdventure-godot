@@ -10,8 +10,8 @@ func _ready():
 	gm.generate_level()
 	add_child(gm)
 	get_node("playing_audio").play()
+	get_node("start_playing_audio").play()
 
 
-func _on_finished():
+func _physics_process(_delta):
 	pass
-

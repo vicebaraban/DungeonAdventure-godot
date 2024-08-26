@@ -1,0 +1,91 @@
+[gd_scene load_steps=9 format=3 uid="uid://4sut4cbkpnes"]
+
+[ext_resource type="Texture2D" uid="uid://bd36q17cnrsb6" path="res://resources/textures/bar.png" id="1_nwae8"]
+[ext_resource type="Texture2D" uid="uid://c1ca0wb17arck" path="res://resources/textures/bow.png" id="2_saojk"]
+[ext_resource type="Texture2D" uid="uid://j75yufk1ii4l" path="res://resources/textures/sword.png" id="3_jdwfo"]
+[ext_resource type="Texture2D" uid="uid://qmc208dwaow3" path="res://resources/textures/hand.png" id="4_mmai7"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_75qqv"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8hp7l"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xrgw4"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_i2wad"]
+
+[node name="ui" type="Control"]
+z_index = 20
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="space" type="ColorRect" parent="."]
+z_index = 20
+layout_mode = 0
+offset_left = -1.0
+offset_top = 480.0
+offset_right = 800.0
+offset_bottom = 600.0
+color = Color(0.172833, 0.172833, 0.172833, 1)
+
+[node name="hp_bar" type="ColorRect" parent="space"]
+z_index = 20
+layout_mode = 0
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 220.0
+offset_bottom = 50.0
+color = Color(0.247059, 0.247059, 0.247059, 1)
+
+[node name="progress_bar" type="TextureProgressBar" parent="space/hp_bar"]
+z_index = 20
+layout_mode = 0
+offset_right = 200.0
+offset_bottom = 30.0
+max_value = 10.0
+value = 10.0
+texture_progress = ExtResource("1_nwae8")
+tint_progress = Color(1, 0, 0, 1)
+
+[node name="power_bar" type="ColorRect" parent="space"]
+z_index = 20
+layout_mode = 0
+offset_left = 20.0
+offset_top = 70.0
+offset_right = 220.0
+offset_bottom = 100.0
+color = Color(0.2484, 0.2484, 0.2484, 1)
+
+[node name="progress_bar" type="TextureProgressBar" parent="space/power_bar"]
+z_index = 20
+layout_mode = 0
+offset_right = 200.0
+offset_bottom = 30.0
+max_value = 10.0
+texture_progress = ExtResource("1_nwae8")
+tint_progress = Color(4.34139e-05, 0.1258, 0.793707, 1)
+
+[node name="inventory" type="ItemList" parent="space"]
+z_index = 20
+layout_mode = 0
+offset_left = 240.0
+offset_top = 29.0
+offset_right = 780.0
+offset_bottom = 91.0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_75qqv")
+theme_override_styles/hovered = SubResource("StyleBoxEmpty_8hp7l")
+theme_override_styles/cursor_unfocused = SubResource("StyleBoxEmpty_xrgw4")
+theme_override_styles/cursor = SubResource("StyleBoxEmpty_i2wad")
+allow_search = false
+auto_height = true
+item_count = 3
+max_columns = 9
+same_column_width = true
+fixed_column_width = 60
+fixed_icon_size = Vector2i(50, 50)
+item_0/icon = ExtResource("4_mmai7")
+item_1/icon = ExtResource("3_jdwfo")
+item_2/icon = ExtResource("2_saojk")

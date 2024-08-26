@@ -1,7 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://dldutdpkushrx"]
+[gd_scene load_steps=7 format=3 uid="uid://dldutdpkushrx"]
 
 [ext_resource type="Script" path="res://src/root.gd" id="1_5xy7h"]
-[ext_resource type="AudioStream" uid="uid://b30pvbe5ylpv0" path="res://resources/sounds/playing.wav" id="2_823dk"]
+[ext_resource type="AudioStream" uid="uid://boivbdjxekmti" path="res://resources/sounds/playing.wav" id="2_823dk"]
+[ext_resource type="AudioStream" uid="uid://0vhe6kqu7eff" path="res://resources/sounds/start_playing.wav" id="3_pbt2b"]
+[ext_resource type="AudioStream" uid="uid://cukk80gx3bdx5" path="res://resources/sounds/enemy_die_1.wav" id="4_8nv6e"]
+[ext_resource type="AudioStream" uid="uid://bgjtbu0yh5cg3" path="res://resources/sounds/enemy_die_2.wav" id="5_qwmou"]
+[ext_resource type="AudioStream" uid="uid://6afbbvl8c0pl" path="res://resources/sounds/enemy_die_3.wav" id="6_qi5el"]
 
 [node name="root" type="Node"]
 script = ExtResource("1_5xy7h")
@@ -9,3 +13,21 @@ script = ExtResource("1_5xy7h")
 [node name="playing_audio" type="AudioStreamPlayer2D" parent="."]
 position = Vector2(-46, 362)
 stream = ExtResource("2_823dk")
+
+[node name="start_playing_audio" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(-222, 320)
+stream = ExtResource("3_pbt2b")
+
+[node name="enemy_die_1_audio" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(-1150, 754)
+stream = ExtResource("4_8nv6e")
+volume_db = 15.847
+
+[node name="enemy_die_2_audio" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(-619, 999)
+stream = ExtResource("5_qwmou")
+
+[node name="enemy_die_3_audio" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(-558, 485)
+stream = ExtResource("6_qi5el")
+volume_db = 18.819

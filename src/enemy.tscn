@@ -1,9 +1,12 @@
-[gd_scene load_steps=6 format=3 uid="uid://0k6joy45abvm"]
+[gd_scene load_steps=9 format=3 uid="uid://0k6joy45abvm"]
 
 [ext_resource type="Script" path="res://src/enemy.gd" id="1_nllvj"]
 [ext_resource type="Texture2D" uid="uid://dix0ke1tpj17t" path="res://resources/textures/enemy_z.png" id="3_lbd5j"]
-[ext_resource type="AudioStream" uid="uid://bwa4jh1gjlomc" path="res://resources/sounds/enemy_hit.wav" id="3_npx0r"]
 [ext_resource type="Script" path="res://src/enemy_sprite.gd" id="4_mfv4f"]
+[ext_resource type="AudioStream" uid="uid://db0yrtu0i6lo" path="res://resources/sounds/enemy_hit_1.wav" id="4_o6y08"]
+[ext_resource type="AudioStream" uid="uid://cu3n2sor6i5mi" path="res://resources/sounds/enemy_hit_2.wav" id="5_bp4vh"]
+[ext_resource type="AudioStream" uid="uid://b1r1v4ot22pyi" path="res://resources/sounds/enemy_hit_3.wav" id="6_hprux"]
+[ext_resource type="AudioStream" uid="uid://42w3irwyqe8t" path="res://resources/sounds/enemy_hit_4.wav" id="7_v2sev"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pvc43"]
 size = Vector2(20, 28.2759)
@@ -18,13 +21,25 @@ position = Vector2(1, 0.5)
 scale = Vector2(1.2, 1.45)
 shape = SubResource("RectangleShape2D_pvc43")
 
-[node name="enemy_audio" type="AudioStreamPlayer2D" parent="."]
-position = Vector2(1, 0)
-stream = ExtResource("3_npx0r")
-
 [node name="enemy_sprite" type="Sprite2D" parent="."]
-z_index = 1
+z_index = 3
 position = Vector2(1, -5)
 scale = Vector2(1.125, 1.18182)
 texture = ExtResource("3_lbd5j")
 script = ExtResource("4_mfv4f")
+
+[node name="EnemyHit1" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(-22, 10)
+stream = ExtResource("4_o6y08")
+
+[node name="EnemyHit2" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(-22, 19)
+stream = ExtResource("5_bp4vh")
+
+[node name="EnemyHit3" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(-28, 7)
+stream = ExtResource("6_hprux")
+
+[node name="EnemyHit4" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(-14, 24)
+stream = ExtResource("7_v2sev")

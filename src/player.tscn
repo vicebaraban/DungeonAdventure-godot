@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://bvxpmy72hitnm"]
+[gd_scene load_steps=21 format=3 uid="uid://bvxpmy72hitnm"]
 
 [ext_resource type="Script" path="res://src/player.gd" id="1_d8hdw"]
 [ext_resource type="Texture2D" uid="uid://b8vwahpotpuxh" path="res://resources/textures/character.png" id="1_rkg8g"]
@@ -11,10 +11,13 @@
 [ext_resource type="Texture2D" uid="uid://j75yufk1ii4l" path="res://resources/textures/sword.png" id="4_xfp28"]
 [ext_resource type="Script" path="res://src/bow_sprite.gd" id="5_1h7up"]
 [ext_resource type="Script" path="res://src/hand.gd" id="5_uspaf"]
+[ext_resource type="Script" path="res://src/hand_area.gd" id="7_afqig"]
 [ext_resource type="Script" path="res://src/sword_sprite.gd" id="7_jqavu"]
+[ext_resource type="AudioStream" uid="uid://dr5thuhc54jh" path="res://resources/sounds/itake_item.wav" id="8_bdig6"]
 [ext_resource type="Script" path="res://src/sword_area.gd" id="9_igltq"]
-[ext_resource type="AudioStream" uid="uid://b3ktvp6m5d1bm" path="res://resources/sounds/sword_hit.wav" id="10_uqv3s"]
+[ext_resource type="AudioStream" uid="uid://clmnosr71x74m" path="res://resources/sounds/sword_hit.wav" id="10_uqv3s"]
 [ext_resource type="AudioStream" uid="uid://durbngmdpvnka" path="res://resources/sounds/ibow_shoot.wav" id="14_ploub"]
+[ext_resource type="PackedScene" uid="uid://4sut4cbkpnes" path="res://src/ui.tscn" id="18_8bcvg"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ntq70"]
 
@@ -33,7 +36,7 @@ scale = Vector2(1.4, 1.4)
 shape = SubResource("CapsuleShape2D_ntq70")
 
 [node name="player_sprite" type="Sprite2D" parent="."]
-z_index = 1
+z_index = 3
 texture = ExtResource("1_rkg8g")
 script = ExtResource("3_xjd2i")
 
@@ -43,11 +46,23 @@ script = ExtResource("4_s2wcb")
 [node name="hand" type="Node2D" parent="inventory"]
 script = ExtResource("5_uspaf")
 
+[node name="hand_area" type="Area2D" parent="inventory/hand"]
+collision_layer = 3
+collision_mask = 3
+script = ExtResource("7_afqig")
+
+[node name="hand_area_shape" type="CollisionShape2D" parent="inventory/hand/hand_area"]
+scale = Vector2(1.5, 2)
+shape = SubResource("CircleShape2D_kao3e")
+
+[node name="hand_audio" type="AudioStreamPlayer" parent="inventory/hand"]
+stream = ExtResource("8_bdig6")
+
 [node name="sword" type="Node2D" parent="inventory"]
 script = ExtResource("4_l6tex")
 
 [node name="sword_sprite" type="Sprite2D" parent="inventory/sword"]
-z_index = 2
+z_index = 6
 position = Vector2(6, -4)
 texture = ExtResource("4_xfp28")
 script = ExtResource("7_jqavu")
@@ -69,9 +84,15 @@ stream = ExtResource("10_uqv3s")
 script = ExtResource("4_tanfu")
 
 [node name="bow_sprite" type="Sprite2D" parent="inventory/bow"]
-z_index = 2
+z_index = 6
 texture = ExtResource("3_vqxts")
 script = ExtResource("5_1h7up")
 
 [node name="bow_audio" type="AudioStreamPlayer2D" parent="inventory/bow"]
 stream = ExtResource("14_ploub")
+
+[node name="ui" parent="." instance=ExtResource("18_8bcvg")]
+offset_left = -399.0
+offset_top = -299.0
+offset_right = 399.0
+offset_bottom = 301.0

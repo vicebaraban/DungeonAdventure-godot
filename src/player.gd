@@ -15,4 +15,5 @@ func _physics_process(_delta):
 
 func hit(number):
 	durability -= number
+	get_node("ui/space/hp_bar/progress_bar").value = durability
 	get_node("player_audio").play()

@@ -57,8 +57,12 @@ func _physics_process(delta):
 
 func hit(number):
 	durability -= number
-	get_node("enemy_audio").play()
+	var rv = randi() % 4 + 1
+	get_node("EnemyHit" + str(rv)).play()
+	print(get_parent().name)
 	if durability <= 0:
+		rv = randi() % 3 + 1
+		get_parent().get_parent().get_node("enemy_die_" + str(rv) + "_audio").play()
 		queue_free()
 
 func attack(contact):

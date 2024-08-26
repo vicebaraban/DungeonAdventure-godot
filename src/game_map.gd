@@ -5,8 +5,12 @@ var Player = preload("res://src/player.tscn")
 var Enemy = preload("res://src/enemy.tscn")
 var Wall = preload("res://src/wall.tscn")
 var Camera = preload("res://src/camera.gd")
+var Finish = preload("res://src/finish.tscn")
+var Key = preload("res://src/key.tscn")
+var PowerItem = preload("res://src/power_item.tscn")
 
 var floor_texture = preload("res://resources/textures/floor.png")
+var door_opened_texture = preload("res://resources/textures/door_opened.png")
 
 
 var level
@@ -62,29 +66,57 @@ func generate_level():
 				e.global_position = t
 				add_child(e)
 				e.name = "floor"
-				e = Player.instantiate()
-				e.global_position = t
-				# e.name = "player"
-				add_child(e)
-				e.name = "player"
+				var e1 = Sprite2D.new()
+				e1.texture = door_opened_texture
+				e1.global_position = t
+				add_child(e1)
+				e1.name = "door_1"
+				var e2 = Player.instantiate()
+				e2.global_position = t
+				add_child(e2)
+				e2.name = "player"
 				add_child(Camera.new())
 			elif p == "B":
-				pass
+				var e = Sprite2D.new()
+				e.texture = floor_texture
+				e.global_position = t
+				add_child(e)
+				e.name = "floor"
+				var e1 = Finish.instantiate()
+				e1.global_position = t
+				add_child(e1)
+				e1.name = "finish"
 			elif p == "?":
-				pass
+				var e = Sprite2D.new()
+				e.texture = floor_texture
+				e.global_position = t
+				add_child(e)
+				e.name = "floor"
+				var e1 = Key.instantiate()
+				e1.global_position = t
+				add_child(e1)
+				e1.name = "key"
 			elif p == "!":
 				var e = Sprite2D.new()
 				e.texture = floor_texture
 				e.global_position = t
 				add_child(e)
 				e.name = "floor"
-				e = Enemy.instantiate()
-				e.global_position = t
+				var e1 = Enemy.instantiate()
+				e1.global_position = t
 				# e.name = "enemy"
-				add_child(e)
-				e.name = "enemy"
+				add_child(e1)
+				e1.name = "enemy"
 			elif p == "R":
-				pass
+				var e = Sprite2D.new()
+				e.texture = floor_texture
+				e.global_position = t
+				add_child(e)
+				e.name = "floor"
+				var e1 = PowerItem.instantiate()
+				e1.global_position = t
+				add_child(e1)
+				e1.name = "power_item"
 			
 
 

@@ -49,5 +49,8 @@ func calculate_direction(x1, y1, x2, y2):
 func hypotenuse(x1, y1, x2, y2):
     return sqrt((x1 - x2) ** 2 + (y1 - y2) ** 2)
 
+func custom_map(value, start1, stop1, start2, stop2):
+    return start2 + (stop2 - start2) * ((value - start1) / (stop1 - start1))
+
 # func calculate_direction_angle(x, y, angle):
 #     pass

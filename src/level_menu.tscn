@@ -27,6 +27,7 @@ thickness = 55
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_m3wf4"]
 
 [node name="level_menu" type="Control"]
+process_mode = 3
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0

@@ -75,7 +75,9 @@ func generate_level():
 				e2.global_position = t
 				add_child(e2)
 				e2.name = "player"
-				add_child(Camera.new())
+				var e3 = Camera.new()
+				add_child(e3)
+				e3.name = "camera"
 			elif p == "B":
 				var e = Sprite2D.new()
 				e.texture = floor_texture
@@ -104,7 +106,6 @@ func generate_level():
 				e.name = "floor"
 				var e1 = Enemy.instantiate()
 				e1.global_position = t
-				# e.name = "enemy"
 				add_child(e1)
 				e1.name = "enemy"
 			elif p == "R":

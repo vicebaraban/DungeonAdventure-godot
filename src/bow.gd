@@ -24,6 +24,6 @@ func _physics_process(delta):
 			var b = Bullet.instantiate()
 			b.damage = damage
 			b.settings(get_node("../..").position, get_global_mouse_position())
-			get_tree().get_root().add_child(b)
+			get_node("../../..").add_child(b)
 			get_node("bow_audio").play()
 

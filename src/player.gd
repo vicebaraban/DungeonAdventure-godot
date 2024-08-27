@@ -16,6 +16,10 @@ func _physics_process(_delta):
 	velocity.y = Input.get_action_strength("move_down") - Input.get_action_strength("move_up")
 	velocity = velocity.normalized() * speed
 	move_and_slide()
+	if Input.is_action_just_pressed("pause"):
+		get_node("../camera").global_position = Vector2(400, 300)
+		get_tree().paused = true
+		get_node("../../pause_menu").visible = true
 
 
 func hit(number):

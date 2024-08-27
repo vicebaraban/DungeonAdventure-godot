@@ -9,6 +9,7 @@
 [ext_resource type="AudioStream" uid="uid://orh5qo2mmi7a" path="res://resources/sounds/menu.wav" id="6_rbk2y"]
 
 [node name="main_menu" type="Control"]
+process_mode = 3
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -25,13 +26,13 @@ texture = ExtResource("1_5k5e2")
 position = Vector2(400, 170)
 texture = ExtResource("3_d12mn")
 
-[node name="b_exit" type="Button" parent="."]
+[node name="b_play" type="Button" parent="."]
 layout_mode = 0
 offset_left = 346.0
-offset_top = 476.0
+offset_top = 280.0
 offset_right = 454.0
-offset_bottom = 534.0
-icon = ExtResource("3_o653r")
+offset_bottom = 338.0
+icon = ExtResource("5_8xv44")
 
 [node name="b_level" type="Button" parent="."]
 layout_mode = 0
@@ -41,19 +42,19 @@ offset_right = 454.0
 offset_bottom = 436.0
 icon = ExtResource("4_j7kmu")
 
-[node name="b_play" type="Button" parent="."]
+[node name="b_exit" type="Button" parent="."]
 layout_mode = 0
 offset_left = 346.0
-offset_top = 280.0
+offset_top = 476.0
 offset_right = 454.0
-offset_bottom = 338.0
-icon = ExtResource("5_8xv44")
+offset_bottom = 534.0
+icon = ExtResource("3_o653r")
 
 [node name="menu_sound" type="AudioStreamPlayer2D" parent="."]
 position = Vector2(-7, 20)
 stream = ExtResource("6_rbk2y")
 autoplay = true
 
-[connection signal="pressed" from="b_exit" to="." method="_on_b_exit_pressed"]
-[connection signal="pressed" from="b_level" to="." method="_on_b_level_pressed"]
 [connection signal="pressed" from="b_play" to="." method="_on_b_play_pressed"]
+[connection signal="pressed" from="b_level" to="." method="_on_b_level_pressed"]
+[connection signal="pressed" from="b_exit" to="." method="_on_b_exit_pressed"]

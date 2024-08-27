@@ -18,6 +18,7 @@ func play():
 	var gm = GameMap.new(active_level)
 	gm.generate_level()
 	add_child(gm)
+	gm.name = "gm"
 
 
 func load_main_menu():

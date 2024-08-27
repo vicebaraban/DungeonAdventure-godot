@@ -1,5 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://dcxaljq0sj4bi"]
+[gd_scene load_steps=7 format=3 uid="uid://dcxaljq0sj4bi"]
 
+[ext_resource type="Script" path="res://src/victory_menu.gd" id="1_kelgb"]
 [ext_resource type="Texture2D" uid="uid://807hahrvk8ko" path="res://resources/textures/menu_back.png" id="1_udb83"]
 [ext_resource type="Texture2D" uid="uid://bbi7nngigtncd" path="res://resources/textures/victory.png" id="2_xnnso"]
 [ext_resource type="Texture2D" uid="uid://gygw1uqegqod" path="res://resources/textures/b_next_level.png" id="3_kijy8"]
@@ -13,6 +14,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_kelgb")
 
 [node name="back_ground" type="Sprite2D" parent="."]
 position = Vector2(400, 300)
@@ -41,4 +43,3 @@ icon = ExtResource("4_u7iex")
 [node name="victory_sound" type="AudioStreamPlayer2D" parent="."]
 position = Vector2(-77, 293)
 stream = ExtResource("5_tgfwm")
-autoplay = true

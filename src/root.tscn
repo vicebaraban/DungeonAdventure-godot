@@ -1,9 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://dldutdpkushrx"]
+[gd_scene load_steps=7 format=3 uid="uid://dldutdpkushrx"]
 
 [ext_resource type="Script" path="res://src/root.gd" id="1_5xy7h"]
 [ext_resource type="PackedScene" uid="uid://b2ndfn4xjeqcd" path="res://src/main_menu.tscn" id="2_wbrr4"]
 [ext_resource type="PackedScene" uid="uid://bii18cgln55b7" path="res://src/level_menu.tscn" id="3_8tigs"]
 [ext_resource type="PackedScene" uid="uid://bdgippvovil6d" path="res://src/pause_menu.tscn" id="4_pc3qv"]
+[ext_resource type="PackedScene" uid="uid://dfofdahgqa58s" path="res://src/lose_menu.tscn" id="5_6fhb0"]
+[ext_resource type="PackedScene" uid="uid://dcxaljq0sj4bi" path="res://src/victory_menu.tscn" id="6_xcvr0"]
 
 [node name="root" type="Node"]
 script = ExtResource("1_5xy7h")
@@ -16,3 +18,9 @@ visible = false
 [node name="pause_menu" parent="." instance=ExtResource("4_pc3qv")]
 visible = false
 z_index = 40
+
+[node name="lose_menu" parent="." instance=ExtResource("5_6fhb0")]
+visible = false
+
+[node name="victory_menu" parent="." instance=ExtResource("6_xcvr0")]
+visible = false

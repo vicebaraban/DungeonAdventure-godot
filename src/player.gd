@@ -26,3 +26,7 @@ func hit(number):
 	durability -= number
 	get_node("ui/space/hp_bar/progress_bar").value = durability
 	get_node("player_audio").play()
+	if durability <= 0:
+		get_node("../../lose_menu").visible = true
+		get_node("../../lose_menu/lose_sound").play()
+		get_parent().queue_free()

@@ -1,5 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://dfofdahgqa58s"]
+[gd_scene load_steps=7 format=3 uid="uid://dfofdahgqa58s"]
 
+[ext_resource type="Script" path="res://src/lose_menu.gd" id="1_ns472"]
 [ext_resource type="Texture2D" uid="uid://807hahrvk8ko" path="res://resources/textures/menu_back.png" id="1_tb152"]
 [ext_resource type="Texture2D" uid="uid://ddmhtfsiu3t2x" path="res://resources/textures/lose.png" id="2_fuctj"]
 [ext_resource type="Texture2D" uid="uid://bpkeeuq0pp1oq" path="res://resources/textures/b_retry_level.png" id="3_1s7bv"]
@@ -13,6 +14,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_ns472")
 
 [node name="back_ground" type="Sprite2D" parent="."]
 position = Vector2(400, 300)
@@ -41,4 +43,6 @@ icon = ExtResource("4_fbher")
 [node name="lose_sound" type="AudioStreamPlayer2D" parent="."]
 position = Vector2(-62, 214)
 stream = ExtResource("5_fqvd3")
-autoplay = true
+
+[connection signal="pressed" from="b_retry" to="." method="_on_b_retry_pressed"]
+[connection signal="pressed" from="b_back_to_menu" to="." method="_on_b_back_to_menu_pressed"]

@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://dcxaljq0sj4bi"]
+[gd_scene load_steps=6 format=3 uid="uid://dcxaljq0sj4bi"]
 
 [ext_resource type="Texture2D" uid="uid://807hahrvk8ko" path="res://resources/textures/menu_back.png" id="1_udb83"]
 [ext_resource type="Texture2D" uid="uid://bbi7nngigtncd" path="res://resources/textures/victory.png" id="2_xnnso"]
 [ext_resource type="Texture2D" uid="uid://gygw1uqegqod" path="res://resources/textures/b_next_level.png" id="3_kijy8"]
 [ext_resource type="Texture2D" uid="uid://dd5cvc6r6kq0c" path="res://resources/textures/b_back_to_menu.png" id="4_u7iex"]
+[ext_resource type="AudioStream" uid="uid://8f76n7iha1m7" path="res://resources/sounds/ivictory.wav" id="5_tgfwm"]
 
 [node name="victory_menu" type="Control"]
 layout_mode = 3
@@ -21,7 +22,7 @@ texture = ExtResource("1_udb83")
 position = Vector2(400, 170)
 texture = ExtResource("2_xnnso")
 
-[node name="b_retry" type="Button" parent="."]
+[node name="b_next" type="Button" parent="."]
 layout_mode = 0
 offset_left = 346.0
 offset_top = 378.0
@@ -36,3 +37,8 @@ offset_top = 476.0
 offset_right = 454.0
 offset_bottom = 534.0
 icon = ExtResource("4_u7iex")
+
+[node name="victory_sound" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(-77, 293)
+stream = ExtResource("5_tgfwm")
+autoplay = true

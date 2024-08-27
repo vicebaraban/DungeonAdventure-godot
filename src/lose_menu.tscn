@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://dfofdahgqa58s"]
+[gd_scene load_steps=6 format=3 uid="uid://dfofdahgqa58s"]
 
 [ext_resource type="Texture2D" uid="uid://807hahrvk8ko" path="res://resources/textures/menu_back.png" id="1_tb152"]
 [ext_resource type="Texture2D" uid="uid://ddmhtfsiu3t2x" path="res://resources/textures/lose.png" id="2_fuctj"]
 [ext_resource type="Texture2D" uid="uid://bpkeeuq0pp1oq" path="res://resources/textures/b_retry_level.png" id="3_1s7bv"]
 [ext_resource type="Texture2D" uid="uid://dd5cvc6r6kq0c" path="res://resources/textures/b_back_to_menu.png" id="4_fbher"]
+[ext_resource type="AudioStream" uid="uid://mbbjfyamd7nf" path="res://resources/sounds/lose.wav" id="5_fqvd3"]
 
 [node name="lose_menu" type="Control"]
 layout_mode = 3
@@ -36,3 +37,8 @@ offset_top = 476.0
 offset_right = 454.0
 offset_bottom = 534.0
 icon = ExtResource("4_fbher")
+
+[node name="lose_sound" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(-62, 214)
+stream = ExtResource("5_fqvd3")
+autoplay = true

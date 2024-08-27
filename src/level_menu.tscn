@@ -1,0 +1,76 @@
+[gd_scene load_steps=15 format=3 uid="uid://bii18cgln55b7"]
+
+[ext_resource type="Texture2D" uid="uid://807hahrvk8ko" path="res://resources/textures/menu_back.png" id="1_dva5p"]
+[ext_resource type="Script" path="res://src/level_menu.gd" id="1_lvb3f"]
+[ext_resource type="Texture2D" uid="uid://506weh3c62jv" path="res://resources/textures/levels_name.png" id="2_nbcwe"]
+[ext_resource type="Texture2D" uid="uid://bs5cxoi5m2rp3" path="res://resources/textures/b_level_1.png" id="3_76w4i"]
+[ext_resource type="Texture2D" uid="uid://d38jk7ngdw6x" path="res://resources/textures/b_level_2.png" id="4_ytenr"]
+[ext_resource type="Texture2D" uid="uid://br6ltqrv2tet2" path="res://resources/textures/b_level_3.png" id="5_iyc71"]
+[ext_resource type="Texture2D" uid="uid://dd5cvc6r6kq0c" path="res://resources/textures/b_back_to_menu.png" id="7_n4iu6"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_i0v1l"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_f0mdq"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_alf7e"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dsflf"]
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_0uwwm"]
+color = Color(0.129558, 0.129558, 0.129558, 1)
+grow_begin = 2.0
+grow_end = 2.0
+thickness = 55
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_u3mk3"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_m3wf4"]
+
+[node name="level_menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_lvb3f")
+
+[node name="background" type="Sprite2D" parent="."]
+position = Vector2(400, 300)
+texture = ExtResource("1_dva5p")
+
+[node name="name" type="Sprite2D" parent="."]
+position = Vector2(400, 170)
+texture = ExtResource("2_nbcwe")
+
+[node name="levels" type="ItemList" parent="."]
+layout_mode = 0
+offset_left = 231.0
+offset_top = 331.0
+offset_right = 559.0
+offset_bottom = 447.0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_i0v1l")
+theme_override_styles/panel = SubResource("StyleBoxEmpty_f0mdq")
+theme_override_styles/hovered = SubResource("StyleBoxEmpty_alf7e")
+theme_override_styles/selected = SubResource("StyleBoxEmpty_dsflf")
+theme_override_styles/selected_focus = SubResource("StyleBoxLine_0uwwm")
+theme_override_styles/cursor_unfocused = SubResource("StyleBoxEmpty_u3mk3")
+theme_override_styles/cursor = SubResource("StyleBoxEmpty_m3wf4")
+auto_height = true
+item_count = 3
+max_columns = 3
+fixed_column_width = 100
+item_0/icon = ExtResource("3_76w4i")
+item_1/icon = ExtResource("4_ytenr")
+item_2/icon = ExtResource("5_iyc71")
+
+[node name="b_menu" type="Button" parent="."]
+layout_mode = 0
+offset_left = 346.0
+offset_top = 476.0
+offset_right = 454.0
+offset_bottom = 534.0
+icon = ExtResource("7_n4iu6")
+
+[connection signal="item_selected" from="levels" to="." method="_on_levels_item_selected"]
+[connection signal="pressed" from="b_menu" to="." method="_on_b_menu_pressed"]

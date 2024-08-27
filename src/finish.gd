@@ -5,7 +5,7 @@ var durability = 2
 
 var openned = false
 
-const open_cooldown = 2.0
+const open_cooldown = 1.2
 var open_cooldown_delta = 0.0
 
 
@@ -16,5 +16,7 @@ func _physics_process(delta):
 		openned = true
 	if openned:
 		open_cooldown_delta += delta
-		if open_cooldown >= open_cooldown_delta:
-			print("finish")
+		if open_cooldown <= open_cooldown_delta:
+			get_node("../../victory_menu").visible = true
+			get_node("../../victory_menu/victory_sound").play()
+			get_parent().queue_free()

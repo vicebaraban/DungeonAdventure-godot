@@ -6,3 +6,4 @@ func _physics_process(_delta):
 		if body.name.left(6) == "finish" and get_parent().attack:
 			body.durability -= 1
 			get_parent().used = true
+			get_node("../../hand/hand_audio").play()

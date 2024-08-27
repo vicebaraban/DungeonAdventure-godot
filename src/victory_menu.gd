@@ -1,11 +1,12 @@
 extends Control
 
 
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
+func _on_b_back_to_menu_pressed():
+	visible = false
+	get_node("..").load_main_menu()
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+func _on_b_next_pressed():
+	visible = false
+	if get_parent().max_level > get_parent().active_level:
+		get_parent().active_level += 1
+	get_parent().play()

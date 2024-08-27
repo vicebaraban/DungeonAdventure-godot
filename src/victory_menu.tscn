@@ -43,3 +43,6 @@ icon = ExtResource("4_u7iex")
 [node name="victory_sound" type="AudioStreamPlayer2D" parent="."]
 position = Vector2(-77, 293)
 stream = ExtResource("5_tgfwm")
+
+[connection signal="pressed" from="b_next" to="." method="_on_b_next_pressed"]
+[connection signal="pressed" from="b_back_to_menu" to="." method="_on_b_back_to_menu_pressed"]

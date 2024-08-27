@@ -5,6 +5,7 @@ var GameMap = preload("res://src/game_map.gd")
 var MainMenu = preload("res://src/main_menu.tscn")
 
 var active_level = 1
+const max_level = 3
 
 
 func _ready():
